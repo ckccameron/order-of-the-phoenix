@@ -3,9 +3,13 @@ class HarryPotterService
     json("/characters")
   end
 
+  def house_info
+    json("/houses/{house_id}")
+  end
+
   def object_conversion
-    characters.map do |character|
-      Wizard.new(character)
+    house_members.map do |house_member|
+      Wizard.new(house_member)
     end
   end
 
@@ -14,6 +18,7 @@ class HarryPotterService
   def conn
     Faraday.new("https://www.potterapi.com/v1") do |f|
       f.params["key"] = ENV["HP_API_KEY"]
+    end
   end
 
   def json(url)
