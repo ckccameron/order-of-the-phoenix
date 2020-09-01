@@ -1,0 +1,15 @@
+<h1><%= @house %></h1>
+<h2><%= @members.size %> Order of the Phoenix Members</h2>
+
+<section class="ootp-member">
+  <% @members.each do |member| %>
+    <p><%= member.name %></p>
+    <% if member.role %>
+      <p><%= member.role %></p>
+      <% end %>
+    <p><%= member.house %></p>
+    <% if member.patronus %>
+      <p> <%= member.patronus %></p>
+    <% end %>
+  <% end %>
+</section>
