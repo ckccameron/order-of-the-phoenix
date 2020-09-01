@@ -3,13 +3,13 @@
 
 <section class="ootp-member">
   <% @members.each do |member| %>
-    <p><%= member.name %></p>
+    <p>Name: <%= member.name %></p>
     <% if member.role %>
-      <p><%= member.role %></p>
+      <p>Role: <%= member.role %></p>
       <% end %>
-    <p><%= member.house %></p>
+    <p>House: <%= member.house %></p>
     <% if member.patronus %>
-      <p> <%= member.patronus %></p>
+      <p>Patronus: <%= member.patronus %></p>
     <% end %>
   <% end %>
 </section>
